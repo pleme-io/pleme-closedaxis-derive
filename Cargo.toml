@@ -1,0 +1,17 @@
+[package]
+name = "pleme-closedaxis-derive"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "Enum-fold derive proc-macro emitted from a tatara-rust-derive EnumFoldDeriveSpec."
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "1"
+quote = "1"
+
+[dependencies.syn]
+version = "2"
+features = ["full", "extra-traits"]
