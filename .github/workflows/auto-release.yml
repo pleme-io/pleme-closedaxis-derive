@@ -1,19 +1,11 @@
-# Auto-emitted by tatara-rust-caixa.
-# The reusable substrate workflow does auto-bump → tag → publish to crates.io.
+name: auto-release
+
 on:
   push:
     branches: [main]
   workflow_dispatch:
-    inputs:
-      bump-type:
-        description: "patch | minor | major"
-        required: false
-        default: patch
 
 jobs:
   release:
     uses: pleme-io/substrate/.github/workflows/cargo-auto-release.yml@main
-    with:
-      bump-type: ${{ inputs.bump-type || 'patch' }}
-      regenerate-cargo-nix: "false"
     secrets: inherit
